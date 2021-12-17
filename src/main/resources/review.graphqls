@@ -1,0 +1,18 @@
+type Query {
+    getReviewBySnackId(snackId: ID!): [Review]
+    reviews: [Review]
+}
+
+type Review {
+    snackId: ID!
+    rating: Int
+    text: String!
+}
+
+type Mutation {
+    newReview(snackId: ID!, rating: Int, text:String!) : Review!
+}
+
+type Subscription {
+    subscribeReviews: Review
+}
